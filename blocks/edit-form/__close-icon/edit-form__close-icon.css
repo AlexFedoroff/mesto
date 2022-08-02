@@ -1,0 +1,8 @@
+.edit-form__close-icon {
+    width: 32px;
+    height: 32px;
+/*    justify-self: flex-end;*/
+    position:relative;
+    left: 100%;
+    margin-bottom: 8px;
+}

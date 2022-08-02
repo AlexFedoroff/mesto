@@ -1,0 +1,16 @@
+.profile__add-button {    
+    justify-self: flex-end;
+    content: url(../../../images/Add_Button.svg);
+}
+
+@media screen and (max-width: 320px) {
+    .profile__add-button {        
+        
+        width: 282px;
+        height: 50px;
+        /*width: 45%;
+        height: 25%;*/
+        margin-top: 32px;
+        content: url(../../../images/Add_Button320.svg);
+    }
+}

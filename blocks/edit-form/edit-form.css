@@ -1,0 +1,9 @@
+.edit-form {
+    display: none;
+    flex-direction: column;
+    justify-items: flex-end;
+    position: fixed;    
+    left: 33%;
+    top: 33%;    
+    z-index: 9;     
+}

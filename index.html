@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+    <link rel="stylesheet" href="./pages/index.css">    
+</head>
+    <body class="root">      
+      <header class="header">
+        <img src="./images/logo.svg" class="header__logo"/>
+      </header>
+      <main class="content">
+        <div class="edit-form">
+          <img src="./images/Close_Icon.svg" class="edit-form__close-icon"/>
+          <form action="" class="edit-form__container">            
+            <h2 class="edit-form__title">Редактировать профиль</h2>
+            <input type="text" placeholder="Введите имя" name="field1" class="edit-form__field" required>
+            <input type="text" placeholder="Введите значение" name="field2" class="edit-form__field" required>
+            <button type="submit" class="edit-form__save-btn">Сохранить</button>
+          </form>
+        </div>
+        <section class="profile">
+          <img src="./images/avatar.jpg" class="profile__avatar" alt=""/>
+          <div class="profile__info">
+            <h1 class="profile__info-title">Жак-Ив Кусто</h1>
+            <button id="edit_button" class="profile__edit-button">
+              <img src="./images/Edit_Button.svg"/>
+            </button>
+            <p class="profile__info-caption">Исследователь океана</p>            
+          </div>
+          <img src="./images/Add_Button.svg" class="profile__add-button"/>
+        </section>
+        <section class="elements">
+          <div class="element">
+            <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="element__image" alt=""/>
+            <div class="element__footer">
+              <p class="element__caption">Карачаевск</p>
+              <img src="./images/heart.svg" class="element__heart" alt=""/>
+            </div>
+          </div>
+          <div class="element">
+            <img src="./images/kirill-pershin-1404681-unsplash.jpg" class="element__image" alt=""/>
+            <div class="element__footer">
+              <p class="element__caption">Гора Эльбрус</p>
+              <img src="./images/heart.svg" class="element__heart" alt=""/>
+            </div>
+          </div>
+          <div class="element">
+            <img src="./images/kirill-pershin-1556355-unsplash.jpg" class="element__image" alt=""/>
+            <div class="element__footer">
+              <p class="element__caption">Домбай</p>
+              <img src="./images/heart.svg" class="element__heart" alt=""/>
+            </div>
+          </div>
+          <div class="element">
+            <img src="./images/kirill-pershin-1404681-unsplash.jpg" class="element__image" alt=""/>
+            <div class="element__footer">
+              <p class="element__caption">Гора Эльбрус</p>
+              <img src="./images/heart.svg" class="element__heart" alt=""/>
+            </div>
+          </div>
+          <div class="element">
+            <img src="./images/kirill-pershin-1556355-unsplash.jpg" class="element__image" alt=""/>
+            <div class="element__footer">
+              <p class="element__caption">Домбай</p>
+              <img src="./images/heart.svg" class="element__heart" alt=""/>
+            </div>
+          </div>
+          <div class="element">
+            <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="element__image" alt=""/>
+            <div class="element__footer">
+              <p class="element__caption">Карачаево-Черкессия</p>
+              <img src="./images/heart.svg" class="element__heart" alt=""/>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">          
+        <p class="footer__logo">© 2020 Mesto Russia</p>
+      </footer>
+      <script type="text/javascript" src="./scripts/script.js"></script>
+    </body>
+</html>
