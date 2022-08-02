@@ -2,8 +2,8 @@ var editForm = document.querySelector(".edit-form");                //Окно �
 var editFormCont = document.querySelector(".edit-form__container"); //Форма редактирования
 var closeIcon = document.querySelector(".edit-form__close-icon");   //Иконка закрытия окна редактирования
 var editBtn = document.querySelector(".profile__edit-button");      //Кнопка редактирования профиля
-var titleEl = document.querySelector(".profile__info-title");       //
-var captionEl =  document.querySelector(".profile__info-caption");  //
+var titleEl = document.querySelector(".profile__info-title");       //Заголовок профиля
+var captionEl =  document.querySelector(".profile__info-caption");  //Текст профиля
 
 //Открытие окна редактирования
 function openEditForm()

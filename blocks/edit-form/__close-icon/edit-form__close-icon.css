@@ -6,3 +6,10 @@
     left: 100%;
     margin-bottom: 8px;
 }
+
+@media screen and (max-width: 320px) {
+    .edit-form__close-icon {        
+        margin-right: 0;
+        left: 89%
+    }
+} 
