@@ -1,13 +1,17 @@
-.header {    
-    height: 74px;
-    margin: 45px 200px 40px;
-    border-bottom: 1px solid #545454;        
-    /*opacity??*/
+.header {
+    display: flex;
+    margin: 0 200px 41px;
+    border-bottom: 1px solid #545454;
+}
+
+@media screen and (max-width: 1050px) {
+    .header {
+        margin: 0 19px 42px;
+    }
 }
 
 @media screen and (max-width: 320px) {
     .header {
-        height: 56px;
-        margin: 28px 0 42px;        
+        margin: 0 0 42px;
     }
 }

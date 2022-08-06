@@ -9,24 +9,13 @@
     <body class="root">      
       <header class="header">
         <img src="./images/logo.svg" class="header__logo"/>
-      </header>
-      <main class="content">
-        <div class="edit-form">
-          <img src="./images/Close_Icon.svg" class="edit-form__close-icon"/>
-          <form action="" class="edit-form__container">            
-            <h2 class="edit-form__title">Редактировать профиль</h2>
-            <input type="text" placeholder="Введите имя" name="fldTitle" class="edit-form__field" required>
-            <input type="text" placeholder="Введите значение" name="fldCaption" class="edit-form__field" required>
-            <button type="submit" class="edit-form__save-btn">Сохранить</button>
-          </form>
-        </div>
+      </header>      
+      <main class="content">        
         <section class="profile">
           <img src="./images/avatar.jpg" class="profile__avatar" alt=""/>
           <div class="profile__info">
-            <h1 class="profile__info-title">Жак-Ив Кусто</h1>
-            <button id="edit_button" class="profile__edit-button">
-              <img src="./images/Edit_Button.svg"/>
-            </button>
+            <h1 class="profile__info-title">Жак-Ив Кусто</h1>            
+            <img src="./images/Edit_Button.svg" class="profile__edit-button">            
             <p class="profile__info-caption">Исследователь океана</p>            
           </div>
           <img src="./images/Add_Button.svg" class="profile__add-button"/>
@@ -36,42 +25,42 @@
             <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="element__image" alt=""/>
             <div class="element__footer">
               <p class="element__caption">Карачаевск</p>
-              <img src="./images/heart.svg" class="element__heart" alt=""/>
+              <img src="./images/heart_disabled.png" class="element__heart" alt="Карачаевск"/>
             </div>
           </div>
           <div class="element">
-            <img src="./images/kirill-pershin-1404681-unsplash.jpg" class="element__image" alt=""/>
+            <img src="./images/alex-fedoroff-ruskeala.jpg" class="element__image" alt="Рускеала"/>
             <div class="element__footer">
-              <p class="element__caption">Гора Эльбрус</p>
-              <img src="./images/heart.svg" class="element__heart" alt=""/>
+              <p class="element__caption">Рускеала</p>
+              <img src="./images/heart_disabled.png" class="element__heart" alt=""/>
             </div>
           </div>
           <div class="element">
-            <img src="./images/kirill-pershin-1556355-unsplash.jpg" class="element__image" alt=""/>
-            <div class="element__footer">
-              <p class="element__caption">Домбай</p>
-              <img src="./images/heart.svg" class="element__heart" alt=""/>
-            </div>
-          </div>
-          <div class="element">
-            <img src="./images/kirill-pershin-1404681-unsplash.jpg" class="element__image" alt=""/>
-            <div class="element__footer">
-              <p class="element__caption">Гора Эльбрус</p>
-              <img src="./images/heart.svg" class="element__heart" alt=""/>
-            </div>
-          </div>
-          <div class="element">
-            <img src="./images/kirill-pershin-1556355-unsplash.jpg" class="element__image" alt=""/>
+            <img src="./images/kirill-pershin-1556355-unsplash.jpg" class="element__image" alt="Домбай"/>
             <div class="element__footer">
               <p class="element__caption">Домбай</p>
-              <img src="./images/heart.svg" class="element__heart" alt=""/>
+              <img src="./images/heart_disabled.png" class="element__heart" alt=""/>
             </div>
           </div>
           <div class="element">
-            <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="element__image" alt=""/>
+            <img src="./images/kirill-pershin-1404681-unsplash.jpg" class="element__image" alt="Гора Эльбрус"/>
+            <div class="element__footer">
+              <p class="element__caption">Гора Эльбрус</p>
+              <img src="./images/heart_disabled.png" class="element__heart" alt=""/>
+            </div>
+          </div>
+          <div class="element">
+            <img src="./images/alex-fedoroff-vseluki.jpg" class="element__image" alt="Вселуки"/>
+            <div class="element__footer">
+              <p class="element__caption">Вселуки</p>
+              <img src="./images/heart_disabled.png" class="element__heart" alt=""/>
+            </div>
+          </div>
+          <div class="element">
+            <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="element__image" alt="Карачаево-Черкессия"/>
             <div class="element__footer">
               <p class="element__caption">Карачаево-Черкессия</p>
-              <img src="./images/heart.svg" class="element__heart" alt=""/>
+              <img src="./images/heart_disabled.png" class="element__heart" alt=""/>
             </div>
           </div>
         </section>
@@ -79,6 +68,15 @@
       <footer class="footer">          
         <p class="footer__logo">© 2020 Mesto Russia</p>
       </footer>
-      <script type="text/javascript" src="./scripts/script.js"></script>
+      <div class="edit-form">
+        <img src="./images/Close_Icon.svg" class="edit-form__close-icon"/>
+        <form action="" class="edit-form__container">            
+          <h2 class="edit-form__title">Редактировать профиль</h2>
+          <input type="text" placeholder="Введите имя" name="fldTitle" class="edit-form__field" required>
+          <input type="text" placeholder="Введите значение" name="fldCaption" class="edit-form__field" required>
+          <button type="submit" class="edit-form__save-btn">Сохранить</button>
+        </form>
+      </div>
+      <script type="text/javascript" src="./scripts/script.js"></script>      
     </body>
 </html>

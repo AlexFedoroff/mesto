@@ -1,11 +1,3 @@
-.footer {
-    margin: 66px auto 60px 200px;
-}
-
-@media screen and (max-width: 320px) {
-    .footer {
-        width: 103px;
-        height: 24px;
-        margin: 48px 19px 36px;
-    }
+.footer {    
+    display: flex;    
 }

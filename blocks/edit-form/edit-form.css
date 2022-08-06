@@ -2,19 +2,23 @@
     display: none;
     flex-direction: column;
     justify-items: flex-end;
-    position: fixed;    
+    position: fixed;
     left: 33%;
-    top: 16%;
-    z-index: 9;         
+    top: 17%;
+    opacity: 1;
+    z-index: 9;
 }
 
+@media screen and (max-width: 1055px) {
+    .edit-form {
+        top: 9.49%;
+    }
+}
 
 @media screen and (max-width: 320px) {
     .edit-form {
-        top: 8%;
-        left: 0;
-        margin: 0 19px;
-        max-width: 282px;
+        width: 282px;
+        left: 0%;
+        margin: 0 19px 0 19px;
     }
 }
- 

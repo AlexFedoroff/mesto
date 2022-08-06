@@ -3,3 +3,9 @@
   height: 19px;
   padding-right: 20px;
 }
+
+.element__heart:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.5s;
+}

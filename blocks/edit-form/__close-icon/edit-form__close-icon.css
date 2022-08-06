@@ -1,15 +1,17 @@
 .edit-form__close-icon {
     width: 32px;
     height: 32px;
-/*    justify-self: flex-end;*/
     position:relative;
-    left: 100%;
+    left: 100.5%;
     margin-bottom: 8px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 1055px) {
     .edit-form__close-icon {        
+        margin-bottom: 16px;
         margin-right: 0;
-        left: 89%
+        left: 92.85%;
+        width: 20px;
+        height: 20px;
     }
-} 
+}
