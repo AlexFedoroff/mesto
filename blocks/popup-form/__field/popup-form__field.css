@@ -1,0 +1,25 @@
+.popup-form__field {    
+    padding:0 0 9px;
+    margin-bottom: 30px;
+    /*
+    display: block;
+    box-sizing: border-box;    
+    border-radius: 0;*/
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;    
+  }
+
+
+@media screen and (max-width: 1050px) {
+  .popup__form__field {
+    font-size: 18px;
+    line-height: 22px;
+    /*margin: 0 22px 30px;*/
+  }
+}

@@ -1,0 +1,10 @@
+.popup-form__field_kind_description {
+  margin-bottom: 48px;
+}
+     
+@media screen and (max-width: 1050px) {
+    .popup-form__field_kind_description 
+    {
+      margin-bottom: 45px;
+    }
+ }

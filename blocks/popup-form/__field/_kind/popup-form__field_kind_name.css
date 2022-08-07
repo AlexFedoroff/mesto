@@ -1,0 +1,8 @@
+.popup-form__field_kind_name {
+  margin-top: 48px;
+}
+@media screen and (max-width: 1050px) {
+    .popup-form__field_kind_name {
+      margin-top: 75px;
+    }
+}
