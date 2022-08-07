@@ -1,5 +1,5 @@
 .element__caption {
-  padding-left: 21px;  
+  padding-left: 21px;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
@@ -9,5 +9,5 @@
   white-space: nowrap;
   overflow: hidden;
   max-width: 70%;
-  margin-top: 26px;
+  margin-top: 25px;
 }
