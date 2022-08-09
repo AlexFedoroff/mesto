@@ -11,10 +11,10 @@
 }
 
 @media screen and (max-width: 1055px) {
-    .profile__info-description {        
-      font-size: 14px;
-      line-height: 17px;
-      justify-self: center;
-      margin: 7px 0 0;
-    }
+  .profile__info-description {        
+    font-size: 14px;
+    line-height: 17px;
+    justify-self: center;
+    margin: 7px 0 0;
+  }
 } 
