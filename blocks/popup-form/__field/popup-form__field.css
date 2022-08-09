@@ -1,4 +1,4 @@
-.popup-form__field {    
+.popup-form__field {
   padding:0 0 9px;
   margin-bottom: 30px;
   border: none;
@@ -15,7 +15,7 @@
 @media screen and (max-width: 1050px) {
   .popup__form__field {
     font-size: 18px;
-    line-height: 22px;    
+    line-height: 22px;
     max-width: 238px;
   }
 }
