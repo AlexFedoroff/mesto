@@ -10,7 +10,7 @@
   letter-spacing: .5px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1055px) {
