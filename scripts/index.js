@@ -3,24 +3,21 @@ var closeIcon = document.querySelector(".popup__close-icon"); //Иконка з�
 var editBtn = document.querySelector(".profile__edit-button"); //Кнопка редактирования профиля
 var nameEl = document.querySelector(".profile__info-name"); //Элемент заголовок профиля
 var descrEl = document.querySelector(".profile__info-description"); //Элемент текст профиля
-var nameFld = document.querySelector(".popup-form__field_kind_name"); //Поле заголовок профиля
-var descrFld = document.querySelector(".popup-form__field_kind_description"); //Поле текст профиля
-var overlay = document.querySelector(".overlay");
+var nameFld = document.querySelector(".popup__field_kind_name"); //Поле заголовок профиля
+var descrFld = document.querySelector(".popup__field_kind_description"); //Поле текст профиля
 
 //Открытие окна редактирования
 function openEditForm()
 {    
   nameFld.value = nameEl.textContent;
   descrFld.value = descrEl.textContent;
-  popup.classList.add("popup_opened");
-  overlay.classList.add("overlay_opened");
+  popup.classList.add("popup_opened");  
 }
 
 //Закрытие окна редактирования
 function closeEditForm()
 {        
-  popup.classList.remove("popup_opened");
-  overlay.classList.remove("overlay_opened");
+  popup.classList.remove("popup_opened");  
 }
 
 //Изменение элементов
