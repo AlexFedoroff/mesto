@@ -67,6 +67,7 @@ class profileInfo {
   }
 }
 
+//show photo in modal
 function viewImg() {
   const imgParent = this.parentElement;
   popupImg.src = this.src;
@@ -82,8 +83,8 @@ function addElement(item) {
   const trash = clonedElement.querySelector('.element__trash');
   const like = clonedElement.querySelector('.element__heart');
 
-  elemImg.src = item.link;
-  
+  elemImg.src = item.link;  
+  elemImg.alt = `${item.name}, фото`;
   elemImg.addEventListener('click',viewImg);
   elementCaption.textContent = item.name;
   
@@ -100,12 +101,12 @@ function removeElement() {
   this.parentElement.remove();
 }
 
-//one function for two forms
+//open form to edit profile or to add a pic
 function openForm() {
   const formValues = [
     { 
-      name:"edit",
-      fld1PlaceHldr:"Имя",
+      name: "edit",
+      fld1PlaceHldr: "Имя",
       fld2PlaceHldr: "Описание",
       fld1Value: profile.getInfo().name,
       fld2Value: profile.getInfo().description,
@@ -113,8 +114,8 @@ function openForm() {
       btnCaption: "Сохранить"
     },
     { 
-      name:"add", 
-      fld1PlaceHldr:"Название",
+      name: "add", 
+      fld1PlaceHldr: "Название",
       fld2PlaceHldr: "Ссылка на картинку",
       fld1Value: "",
       fld2Value: "",
