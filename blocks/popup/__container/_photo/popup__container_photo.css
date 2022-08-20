@@ -1,7 +1,7 @@
 .popup__container_photo {
     border: none;
     width: auto;
-    background: transparent;        
+    background: transparent;
     left: auto;
     top: 15%;
   }
@@ -9,6 +9,6 @@
   @media screen and (max-width: 1050px) {
     .popup__container_photo {
       top: 13.5%;
-      max-width: 320px;      
+      max-width: 320px;
     }
   }
