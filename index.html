@@ -28,15 +28,28 @@
     </footer>    
     <div class="popup popup_edit">
       <div class="popup__container">
-        <h2 class="popup__title"></h2>
-        <button class="popup__close-icon" type="button"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <button class="popup__close-icon popup__close-icon_edit" type="button"></button>
         <form class="popup__form" name="popup-form">
-          <input class="popup__field popup__field_kind_name" type="text" name="popup-form-name" required />
-          <input class="popup__field popup__field_kind_description" type="text" name="popup-form-about" required />
-          <button class="popup__save-btn" type="submit">Сохранить</button>
+          <input class="popup__field popup__field_name" type="text" name="popup-form-name" required />
+          <input class="popup__field popup__field_description" type="text" name="popup-form-about" required />
+          <button class="popup__save-btn popup__save-btn_edit" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
+    
+    <div class="popup popup_add">
+      <div class="popup__container">
+        <h2 class="popup__title">Новое место</h2>
+        <button class="popup__close-icon popup__close-icon_add" type="button"></button>
+        <form class="popup__form" name="popup-form">
+          <input class="popup__field popup__field_title" type="text" name="popup-form-title" placeholder="Название" required />
+          <input class="popup__field popup__field_link" type="text" name="popup-form-link" placeholder="Ссылка на картинку" required />
+          <button class="popup__save-btn popup__save-btn_add" type="submit">Создать</button>
+        </form>
+      </div>
+    </div>
+
     <div class="popup popup_photo">      
       <div class="popup__container popup__container_photo">
         <button class="popup__close-icon popup__close-icon_photo" type="button"></button>
