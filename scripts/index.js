@@ -1,6 +1,4 @@
 let popup; 
-let cardData;
-let card;
 
 const popupFieldName = document.querySelector('.popup__field_name');
 const popupFieldDescr = document.querySelector('.popup__field_description');
@@ -110,11 +108,9 @@ function viewImg() {
 }
 
 function submitAdd(evt) {  
-  evt.preventDefault();
-  cardData = { name: popupFieldTitle.value, link: popupFieldLink.value };
-  card = createCard(cardData);
-  addCard(card);
-  //elements.prepend(createCard(cardData));
+  evt.preventDefault();    
+  const cardData = { name: popupFieldTitle.value, link: popupFieldLink.value };
+  addCard(createCard(cardData));  
   closePopup();
 }
 
@@ -131,7 +127,7 @@ function closePopup() {
 
 //get initial cards from array
 initialElements.forEach((item) => {
-  card = createCard(item); 
+  const card = createCard(item); 
   addCard(card);
 });
 
