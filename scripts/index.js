@@ -1,5 +1,3 @@
-let popup; 
-
 const popupFieldName = document.querySelector('.popup__field_name');
 const popupFieldDescr = document.querySelector('.popup__field_description');
 const popupFieldTitle = document.querySelector('.popup__field_title');
@@ -10,22 +8,17 @@ const descrEl = document.querySelector('.profile__info-description');
 
 const popupEdit = document.querySelector('.popup_edit');
 const popupAdd = document.querySelector('.popup_add');
-const popup_photo = document.querySelector('.popup_photo');
+const popupPhoto = document.querySelector('.popup_photo');
 const popupImg = document.querySelector('.popup__img');
 const photoDescr = document.querySelector('.popup__photo-description');
 
 const elemTemplate = document.querySelector('#element-template');
-const elements = document.querySelector('.elements'); //cards section
-
-const saveBtn = document.querySelector('.popup__save-btn_edit'); //submit button for edit profile form
-const addBtn = document.querySelector('.popup__save-btn_add'); //submit button for add card form
+const elements = document.querySelector('.elements'); 
 
 const openAddBtn = document.querySelector('.profile__add-button');
 const openEditBtn = document.querySelector('.profile__edit-button');
 
-const closeIconAdd = document.querySelector('.popup__close-icon_add');
-const closeIconEdit = document.querySelector('.popup__close-icon_edit');
-const closeIconPhoto = document.querySelector('.popup__close-icon_photo');
+const closeButtons = document.querySelectorAll('.popup__close-icon');
 
 const initialElements = [
   {
@@ -64,7 +57,9 @@ function createCard(cardData) {
   elemImg.src = cardData.link;
   elemImg.alt = `${cardData.name}, фото`;
   elementCaption.textContent = cardData.name;
-  elemImg.addEventListener('click',viewImg);
+    
+  elemImg.addEventListener('click', () => viewImg(cardData));
+
   trashBtn.addEventListener('click',removeCard);
   likeBtn.addEventListener('click',doLike);
   return clonedElement;
@@ -74,55 +69,53 @@ function addCard(card) {
   elements.prepend(card);
 }
 
-function removeCard() {
-  this.parentElement.remove();
+function removeCard(evt) {
+  evt.target.closest('.element').remove();
 }
 
-function doLike() {
-  this.classList.toggle('element__heart_enabled');
+function doLike(evt) {
+  evt.target.classList.toggle('element__heart_enabled');
 }
 
-function openPopup(formClass) {
-  popup = document.querySelector(formClass);
+function openPopup(popup) {
   popup.classList.add('popup_opened');
 }
 
 function openEditForm() {
   popupFieldName.value = nameEl.textContent;
   popupFieldDescr.value = descrEl.textContent;
-  openPopup('.popup_edit');
+  openPopup(popupEdit);
 }
 
 function openAddForm() {
-  popupFieldLink.value = '';
-  popupFieldTitle.value = '';
-  openPopup('.popup_add');
+  openPopup(popupAdd);
 }
 
 //show photo in modal
-function viewImg() {
-  const imgParent = this.parentElement;
-  popupImg.src = this.src;
-  photoDescr.textContent = imgParent.querySelector('.element__caption').textContent; //a description of the clicked card
-  openPopup('.popup_photo');
+function viewImg(cardData) {
+  popupImg.src = cardData.link;
+  popupImg.alt = `${cardData.name}, фото`;
+  photoDescr.textContent = cardData.name;
+  openPopup(popupPhoto);
 }
 
-function submitAdd(evt) {  
-  evt.preventDefault();    
+function submitAdd(evt) {
+  evt.preventDefault();
   const cardData = { name: popupFieldTitle.value, link: popupFieldLink.value };
-  addCard(createCard(cardData));  
-  closePopup();
+  addCard(createCard(cardData));
+  evt.target.reset();
+  closePopup(popupAdd);
 }
 
-function submitEdit(evt) {  
+function submitEdit(evt) {
   evt.preventDefault();
   nameEl.textContent = popupFieldName.value;
   descrEl.textContent = popupFieldDescr.value;
-  closePopup();
+  closePopup(popupEdit);
 }
 
-function closePopup() {
-  popup.classList.remove('popup_opened');  
+function closePopup(popup) {
+  popup.classList.remove('popup_opened');
 }
 
 //get initial cards from array
@@ -131,11 +124,12 @@ initialElements.forEach((item) => {
   addCard(card);
 });
 
-//some event listeners
-closeIconAdd.addEventListener('click',closePopup);
-closeIconEdit.addEventListener('click',closePopup);
-closeIconPhoto.addEventListener('click',closePopup);
+closeButtons.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
+});
+
 openEditBtn.addEventListener('click',openEditForm);
 openAddBtn.addEventListener('click', openAddForm);
-saveBtn.addEventListener('click', submitEdit);
-addBtn.addEventListener('click', submitAdd);
+popupAdd.addEventListener('submit',submitAdd)
+popupEdit.addEventListener('submit',submitEdit)
