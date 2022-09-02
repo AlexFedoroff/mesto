@@ -1,4 +1,4 @@
-const enableValidation = (cfg) => {
+function enableValidation (cfg) {
   const formList = Array.from(document.querySelectorAll(cfg.formSelector));
   formList.forEach((formElement) => {
     formElement.addEventListener('submit', function (evt) {
@@ -8,7 +8,7 @@ const enableValidation = (cfg) => {
   });    
 };
 
-const setEventListeners = (formElement,cfg) => {
+function setEventListeners (formElement,cfg) {
   const inputList = Array.from(formElement.querySelectorAll(cfg.inputSelector));
   const buttonElement = formElement.querySelector(cfg.submitButtonSelector);
   toggleButtonState(inputList, buttonElement,cfg);
@@ -21,7 +21,7 @@ const setEventListeners = (formElement,cfg) => {
   });
 };
 
-const checkInputValidity = (formElement, inputElement, cfg) => {
+function checkInputValidity (formElement, inputElement, cfg) {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage, cfg);
   }
@@ -31,14 +31,14 @@ const checkInputValidity = (formElement, inputElement, cfg) => {
   }
 };
 
-const showInputError = (formElement, inputElement, errorMessage, cfg) => {
+function showInputError (formElement, inputElement, errorMessage, cfg) {
   const errorElement = formElement.querySelector(`.popup__error_${inputElement.id}`);
   inputElement.classList.add(cfg.inputErrorClass);
   errorElement.textContent = errorMessage;  
   //errorElement.classList.add(cfg.errorClass);
 };
   
-const hideInputError = (formElement, inputElement, cfg) => {
+function hideInputError (formElement, inputElement, cfg) {
   const errorElement = formElement.querySelector(`.popup__error_${inputElement.id}`);
   inputElement.classList.remove(cfg.inputErrorClass);  
   errorElement.textContent = '';
