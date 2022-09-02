@@ -2,17 +2,17 @@
   display: flex;
   flex-direction: column;
   justify-items: flex-end;
-  position: fixed;  
+  position: fixed;
   opacity: 1;
   z-index: 7;
   background-color: white;
   width: 430px;
-  border-radius: 10px;  
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 1050px) {
-  .popup__container {    
+  .popup__container {
     max-width: 238px;
-    padding: 25px 22px;    
+    padding: 25px 22px;
   }
 }
