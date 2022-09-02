@@ -10,6 +10,7 @@
   background-color: white;
   width: 430px;
   border-radius: 10px;
+  max-height: 330px;
 }
 
 @media screen and (max-width: 1050px) {
@@ -18,5 +19,6 @@
     max-width: 238px;
     padding: 25px 22px;
     left: calc((100% - 282px)/2);
+    max-height: 322px;
   }
 }
