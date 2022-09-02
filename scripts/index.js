@@ -21,33 +21,6 @@ const openEditBtn = document.querySelector('.profile__edit-button');
 //const closeButtons = document.querySelectorAll('.popup__close-icon');
 const popups = document.querySelectorAll('.popup');
 
-const initialElements = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 function createCard(cardData) {
   const clonedElement = elemTemplate.content.cloneNode(true);
   const elementCaption = clonedElement.querySelector('.element__caption');
@@ -79,8 +52,8 @@ function doLike(evt) {
 }
 
 function openPopup(popup) {
-  document.addEventListener('keydown', (evt) => escapeClose(evt,popup));
-  popup.classList.add('popup_opened');  
+  document.addEventListener('keydown', closeOnEscape);
+  popup.classList.add('popup_opened');
 }
 
 function openEditForm() {
@@ -105,12 +78,18 @@ function viewImg(cardData) {
   openPopup(popupPhoto);
 }
 
-function submitAdd(evt) {
-  evt.preventDefault();
+function submitAdd(evt) {  
   const cardData = { name: popupFieldTitle.value, link: popupFieldLink.value };
+  const inputList = Array.from(popupAdd.querySelectorAll('.popup__field'));
+  const buttonElement = popupAdd.querySelector('.popup__save-btn');  
+  evt.preventDefault();
+
   addCard(createCard(cardData));
   evt.target.reset();
-  closePopup(popupAdd);
+  closePopup(popupAdd); 
+  toggleButtonState(inputList, buttonElement, { inactiveButtonClass: 'popup__save-btn_disabled' });
+  //buttonElement.classList.add('popup__save-btn_disabled');
+  //buttonElement.disabled = true;
 }
 
 function submitEdit(evt) {
@@ -122,11 +101,12 @@ function submitEdit(evt) {
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
-  document.removeEventListener('keydown', (evt) => escapeClose(evt,popup));
+  document.removeEventListener('keydown', closeOnEscape);
 }
 
-function escapeClose(evt, popup) {     
-  if (evt.key === 'Escape') {
+function closeOnEscape(evt) {       
+  const popup = document.querySelector('.popup_opened');
+  if (evt.key === 'Escape') {      
       closePopup(popup);
   }
 }
@@ -136,12 +116,6 @@ initialElements.forEach((item) => {
   const card = createCard(item); 
   addCard(card);
 });
-
-/*
-closeButtons.forEach((button) => {
-  const popup = button.closest('.popup');
-  button.addEventListener('click', () => closePopup(popup));
-});*/
 
 //closing popup by clicking on overlay
 popups.forEach((popup) => {
