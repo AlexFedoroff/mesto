@@ -6,26 +6,26 @@
     <title>Место</title>
     <link rel="stylesheet" href="./pages/index.css">    
   </head>
-  <body class="root">      
+  <body class="root">
     <header class="header">
       <img src="./images/logo.svg" class="header__logo" alt="Логотип"/>
-    </header>      
-    <main class="content">        
+    </header>
+    <main class="content">
       <section class="profile">
         <img src="./images/avatar.jpg" class="profile__avatar" alt="Аватар автора фоторабот"/>
         <div class="profile__info">
-          <h1 class="profile__info-name">Жак-Ив Кусто</h1>            
+          <h1 class="profile__info-name">Жак-Ив Кусто</h1>
           <button name="edit" class="profile__edit-button" type="button"></button>
-          <p class="profile__info-description">Исследователь океана</p>            
+          <p class="profile__info-description">Исследователь океана</p>
         </div>
         <button name="add" type="button" class="profile__add-button"></button>
       </section>
-      <section class="elements">        
+      <section class="elements">
       </section>
     </main>
     <footer class="footer">
       <p class="footer__logo">© 2020 Mesto Russia</p>
-    </footer>    
+    </footer>
     <div class="popup popup_edit">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
@@ -47,14 +47,14 @@
         <form class="popup__form" name="popup-form-add" novalidate>
           <input class="popup__field popup__field_title" type="text" name="popup-form-title" placeholder="Название" id="input-title" minlength="2" maxlength="30" required/>
           <span class="popup__error popup__error_input-title" id="input-title-error"></span>
-          <input type="url" class="popup__field popup__field_link" type="text" name="popup-form-link" id="input-link" placeholder="Ссылка на картинку" required/>
+          <input type="url" class="popup__field popup__field_link" name="popup-form-link" id="input-link" placeholder="Ссылка на картинку" required/>
           <span class="popup__error popup__error_input-link" id="input-link-error"></span>
           <button class="popup__save-btn popup__save-btn_add" type="submit">Создать</button>
         </form>
       </div>
     </div>
 
-    <div class="popup popup_photo">      
+    <div class="popup popup_photo">
       <div class="popup__container popup__container_photo">
         <button class="popup__close-icon popup__close-icon_photo" type="button"></button>
         <img class="popup__img" src="#" alt=""/>
@@ -63,7 +63,7 @@
     </div>
 
     <template id="element-template">
-      <div class="element">          
+      <div class="element">
         <img src="#" class="element__image" alt=""/>
         <button class="element__trash" type="button" title="Удалить фото"></button>
         <div class="element__footer">
@@ -73,6 +73,6 @@
       </div>
     </template>
     <script src="./scripts/validate.js"></script>
-    <script src="./scripts/index.js"></script>    
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
