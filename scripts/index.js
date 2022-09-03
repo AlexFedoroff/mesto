@@ -86,10 +86,8 @@ function submitAdd(evt) {
 
   addCard(createCard(cardData));
   evt.target.reset();
-  closePopup(popupAdd); 
+  closePopup(popupAdd);
   toggleButtonState(inputList, buttonElement, { inactiveButtonClass: 'popup__save-btn_disabled' });
-  //buttonElement.classList.add('popup__save-btn_disabled');
-  //buttonElement.disabled = true;
 }
 
 function submitEdit(evt) {
@@ -104,10 +102,11 @@ function closePopup(popup) {
   document.removeEventListener('keydown', closeOnEscape);
 }
 
-function closeOnEscape(evt) {       
-  const popup = document.querySelector('.popup_opened');
-  if (evt.key === 'Escape') {      
-      closePopup(popup);
+function closeOnEscape(evt) {
+  let popup;
+  if (evt.key === 'Escape') {
+    popup = document.querySelector('.popup_opened');
+    closePopup(popup);
   }
 }
 
@@ -121,7 +120,7 @@ initialElements.forEach((item) => {
 popups.forEach((popup) => {
   popup.addEventListener('click',function (e) {
     if (e.target.classList.contains('popup') || e.target.classList.contains('popup__close-icon')) {
-      closePopup(popup);    
+      closePopup(popup);
     }
 })
 });
