@@ -70,8 +70,7 @@ openEditBtn.addEventListener('click', (event) => {
 
 //popup for adding new images
 const popupAdd = new PopupWithForm('.popup_add', (data, close) => {
-  const cardElement = createCard(data);
-  console.log(data);
+  const cardElement = createCard(data);  
   cardsLst.addItem(cardElement);
   close();
 });
