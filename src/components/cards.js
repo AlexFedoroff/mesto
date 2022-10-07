@@ -25,4 +25,4 @@ const initialElements = [
     }
   ];
 
-  export {initialElements};
+  export { initialElements };

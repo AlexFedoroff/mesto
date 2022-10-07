@@ -1,4 +1,4 @@
-export class FormValidator {
+export default class FormValidator {
   constructor(settings, formSelector) {    
     this._inactiveButtonClass = settings.inactiveButtonClass;
     this._formElement = document.querySelector(formSelector);
@@ -59,7 +59,6 @@ export class FormValidator {
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement)
     });
-
   }
 
   enableValidation() {    

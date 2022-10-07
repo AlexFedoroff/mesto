@@ -1,6 +1,6 @@
-export class Card {
+export default class Card {
     constructor (data, templateSelector, handleCardClick) {
-      this._templateSelector = templateSelector;      
+      this._templateSelector = templateSelector;
       this._cardName = data.name;
       this._cardLink = data.link;      
       this._handleCardClick = handleCardClick;
@@ -25,7 +25,7 @@ export class Card {
     _setEventListeners() {
       this._element.querySelector('.element__trash').addEventListener('click', this._removeCard);
       this._element.querySelector('.element__heart').addEventListener('click', this._doLike);
-      this._cardImage.addEventListener('click', () => this._handleCardClick(this._cardName, this._cardLink));      
+      this._cardImage.addEventListener('click', () => this._handleCardClick(this._cardName, this._cardLink));
     }
   
   generateCard() {
@@ -38,5 +38,4 @@ export class Card {
     
     return this._element;
     }
-  } 
-  
+  }
