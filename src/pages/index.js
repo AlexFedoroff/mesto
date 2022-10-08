@@ -55,9 +55,8 @@ const userInfo = new UserInfo({
 });
 
 //popup for editig user info
-const popupEdit = new PopupWithForm('.popup_edit', (data, close) => {
-  userInfo.setUserInfo(data);  
-  close();    
+const popupEdit = new PopupWithForm('.popup_edit', (data) => {
+  userInfo.setUserInfo(data);    
 });
 popupEdit.setEventListeners();
 
@@ -69,10 +68,9 @@ openEditBtn.addEventListener('click', (event) => {
 });
 
 //popup for adding new images
-const popupAdd = new PopupWithForm('.popup_add', (data, close) => {
+const popupAdd = new PopupWithForm('.popup_add', (data) => {
   const cardElement = createCard(data);  
-  cardsLst.addItem(cardElement);
-  close();
+  cardsLst.addItem(cardElement);  
 });
 
 popupAdd.setEventListeners();
