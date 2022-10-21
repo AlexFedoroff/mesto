@@ -34,12 +34,12 @@ popupDelCard.setEventListeners();
 
 //returns a new card from the template
 function createCard(cardData) {
-  const card = new Card(cardData, "#element-template",     
+  const card = new Card(cardData, "#element-template",
     () => {
       popupImage.open(cardData);
     },
-    (cardId) => {            
-      popupDelCard.open();      
+    (cardId) => {
+      popupDelCard.open();
       popupDelCard.setSubmitHadler(() => {
         api
           .deleteCard(cardId)
@@ -112,7 +112,7 @@ const popupEditAvatar = new PopupWithForm(
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
-      })            
+      })
   }
 );
 popupEditAvatar.setEventListeners();
@@ -121,14 +121,14 @@ const popupEdit = new PopupWithForm('.popup_edit', (data) => {
   popupEdit.setSubmitButtonText("Сохранение...");
   api
     .editUserInfo(data)
-    .then(() => {      
+    .then(() => {
       userInfo.setUserInfo(data);
       popupEdit.close();
     })
     .catch((err) => {
       console.log(`Ошибка: ${err}`);
     })
-    .finally(() => {        
+    .finally(() => {
       popupEdit.setSubmitButtonText("Сохранить");
     });
   });
@@ -162,7 +162,7 @@ const popupAdd = new PopupWithForm('.popup_add', (data) => {
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
       })
-      .finally(() => {        
+      .finally(() => {
         popupAdd.setSubmitButtonText("Создать");
       });
   });
@@ -182,7 +182,7 @@ Promise.all([
   const [userData, initialCards] = data;
   userInfo.setUserInfo(userData);
   
-  cardLst = new Section (                
+  cardLst = new Section (
       (item) => {
         item._userId = userInfo.userId;
         const cardElement = createCard(item);

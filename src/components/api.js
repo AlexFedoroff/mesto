@@ -97,7 +97,7 @@ export default class Api {
   }
   
   //Изменение аватара
-  editAvatar(data) {    
+  editAvatar(data) {
     return fetch(`${this._address}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
