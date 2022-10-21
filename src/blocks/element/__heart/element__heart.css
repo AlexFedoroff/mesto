@@ -7,7 +7,7 @@
   background-image: url(../../../images/heart_disabled.png);
   background-color: white;
   border: none;
-  margin: 5px 20px 0 0;
+  /*margin: 5px 20px 0 0;*/
 }
 
 .element__heart:hover {

@@ -8,7 +8,7 @@
   background-color: white;
   width: 430px;
   border-radius: 10px;
-  height: 331px;
+  /*height: 331px;*/
 }
 
 @media screen and (max-width: 1050px) {
