@@ -38,8 +38,8 @@ export default class Card {
     }
     
     _setEventListeners() {
-      console.log(this._ownerId);
-      console.log(this._userId);
+      //console.log(this._ownerId);
+      //console.log(this._userId);
       this._trashBtn = this._element.querySelector(".element__trash");      
       if (this._ownerId != this._userId){
         this._trashBtn.remove();
