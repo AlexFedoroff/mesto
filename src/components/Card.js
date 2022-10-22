@@ -29,17 +29,16 @@ export default class Card {
       return cardElement;
     }
   
-    getLikesState() {
+    getLikesState() {      
       return this._likesElement.classList.contains("element__heart_enabled");
     }
 
     setLikesCounter(value){
       this._likesCounter.textContent = value;
+      //this.likeToggle();
     }
     
     _setEventListeners() {
-      //console.log(this._ownerId);
-      //console.log(this._userId);
       this._trashBtn = this._element.querySelector(".element__trash");
       if (this._ownerId != this._userId){
         this._trashBtn.remove();
@@ -50,22 +49,18 @@ export default class Card {
           this._handleDelBtnClick(this._id);
         });
       }
-            
-      this._likesElement = this._element.querySelector(".element__heart");
-      this._likesCounter = this._element.querySelector(".element__heart-counter");
-      this._likesCounter.textContent = this._likes.length;
       
-      this._likes.forEach((like) => {
-        if (like._id === this._userId) {
-          this._likesElement.classList.add("element__heart_enabled");
-        }
-      });
-      
+      this._likesElement = this._element.querySelector(".element__heart");      
       this._likesElement.addEventListener("click", () => {
-        this._likesElement.classList.toggle("element__heart_enabled");
+        //this._likesElement.classList.toggle("element__heart_enabled");
         this._handleLikeBtnClick(this._id);
       });
       this._cardImage.addEventListener("click", () => this._handleCardClick(this._cardName, this._cardLink));
+    }
+    
+    likeToggle(){
+      this._likesElement.classList.toggle("element__heart_enabled");
+      //console.log("like");
     }
     
     removeCard() {
@@ -81,6 +76,16 @@ export default class Card {
       this._cardImage.src = this._cardLink;
       this._cardImage.alt = `${this._cardName}, фото`;
       this._element.querySelector(".element__caption").textContent = this._cardName;
+
+      this._likesCounter = this._element.querySelector(".element__heart-counter");
+      this._likesCounter.textContent = this._likes.length;
+      
+      this._likes.forEach((like) => {
+        if (like._id === this._userId) {
+          this._likesElement.classList.add("element__heart_enabled");
+        }
+      });
+
       return this._element;
     }
   }

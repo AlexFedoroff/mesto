@@ -21,10 +21,9 @@ export default class Popup {
       }
     }
 
-    setEventListeners() {
-      this._closeBtn.addEventListener('click', () => this.close());
-      this._popupEl.addEventListener('click', (event) => {
-        if (event.target.classList.contains('popup') || event.target.classList.contains('.popup__close-icon')) {
+    setEventListeners() {      
+      this._popupEl.addEventListener('click', (event) => {        
+        if (event.target.classList.contains('popup') || event.target.classList.contains('popup__close-icon')) {          
           this.close();
         }
       });
